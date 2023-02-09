@@ -54,26 +54,31 @@ if isfield(opts, 'max_mu');      max_mu = opts.max_mu;        end
 if isfield(opts, 'DEBUG');       DEBUG = opts.DEBUG;          end
 
 dim = size(X);
-L = zeros(dim);
-S = L;
-Y = L;
+L_kp1 = zeros(dim);
+S_kp1 = zeros(dim);
+Y_kp1 = zeros(dim);
+mu_kp1 = mu;
 
-iter = 0;
 for iter = 1 : max_iter
-    Lk = L;
-    Sk = S;
-    % update L
-    [L,tnnL] = prox_tnn(-S+X-Y/mu,1/mu);
-    % update S
-    S = prox_l1(-L+X-Y/mu,lambda/mu);
+    % this block is to make the entire optimizing code seems more like
+    % algorithm proposed by the original paper
+    L_k = L_kp1;
+    S_k = S_kp1;
+    Y_k = Y_kp1;
+    mu_k = mu_kp1;
+
+    % update L_k+1 by S_k, X, Y_k and mu_k
+    [L_kp1,tnnL] = prox_tnn(-S_k+X-Y_k/mu_k,1/mu_k);
+    % update S_k+1 by L_k+1, X, Y_k, mu_k and lambda
+    S_kp1 = prox_l1(-L_kp1+X-Y_k/mu_k,lambda/mu_k);
   
-    dY = L+S-X;
-    chgL = max(abs(Lk(:)-L(:)));
-    chgS = max(abs(Sk(:)-S(:)));
+    dY = L_kp1+S_kp1-X;
+    chgL = max(abs(L_kp1(:)-L_k(:)));
+    chgS = max(abs(S_kp1(:)-S_k(:)));
     chg = max([ chgL chgS max(abs(dY(:))) ]);
     if DEBUG
-        if iter == 1 || mod(iter, 10) == 0
-            obj = tnnL+lambda*norm(S(:),1);
+        if iter == 1 || mod(iter,10) == 0
+            obj = tnnL+lambda*norm(S_kp1(:),1);
             err = norm(dY(:));
             disp(['iter ' num2str(iter) ', mu=' num2str(mu) ...
                     ', obj=' num2str(obj) ', err=' num2str(err)]); 
@@ -83,8 +88,10 @@ for iter = 1 : max_iter
     if chg < tol
         break;
     end 
-    Y = Y + mu*dY;
-    mu = min(rho*mu,max_mu);    
+    Y_kp1 = Y_k + mu_k*dY;
+    mu_kp1 = min(rho*mu_k,max_mu);    
 end
+L = L_kp1;
+S = S_kp1;
 obj = tnnL+lambda*norm(S(:),1);
 err = norm(dY(:));

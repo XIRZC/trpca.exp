@@ -49,12 +49,11 @@ for i = 2 : halfn3
     if r>=1
         S = S(1:r)-rho;
         X(:,:,i) = U(:,1:r)*diag(S)*V(:,1:r)';
-        tnn = tnn+sum(S)*2;
+        tnn = tnn+sum(S);
         trank = max(trank,r);
     end
     X(:,:,n3+2-i) = conj(X(:,:,i));
 end
-
 % if n3 is even
 if mod(n3,2) == 0
     i = halfn3+1;

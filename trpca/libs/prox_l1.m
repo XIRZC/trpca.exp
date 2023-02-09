@@ -8,5 +8,10 @@ function x = prox_l1(b,lambda)
 %
 % Written by Canyi Lu (canyilu@gmail.com)
 % 
+% sl(b) = x-b+lsgnx(x) = 0
+% x = b-lsgn(x)
+% x = b-l if b > l
+%     b+l if b < -l
+%     0 if |b| < l
 
 x = max(0,b-lambda)+min(0,b+lambda);
