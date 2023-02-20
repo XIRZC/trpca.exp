@@ -1,19 +1,18 @@
 # Tensor Robust Principal Component Analysis with Convex Optimization 
 
-This is a repository of simple TRPCA experiments including image denoising, video background modeling and multi-dimensional data analysis and most of codes are copied from [Lu Canyi's TRPCA Github Repo](https://github.com/canyilu/Tensor-Robust-Principal-Component-Analysis-TRPCA) with some adaptions.
+This is a repository of simple TRPCA experiments including image denoising and video background modeling, and most of codes are copied from [Lu Canyi's TRPCA Github Repo](https://github.com/canyilu/Tensor-Robust-Principal-Component-Analysis-TRPCA) with some adaptions.
 
 ![](./resources/banner.png)
 
 ## Usage
 
-Use MATLAB open the subfolder `./trpca`, and run `./trpca/rgb_image_denoising_task.m`, `./trpca/video_background_modeling_task.m` and `./trpca/timeseries_tabular_data_mining_task.m` for three applications, respectively.
+Use MATLAB open the subfolder `./trpca`, and run `./trpca/rgb_image_denoising_task.m`, `./trpca/video_background_modeling_task.m` for two applications, respectively.
 
 ## Applications
 
-There are mainly three TRPCA applications leveraged in this repo:
+There are mainly two TRPCA applications leveraged in this repo:
 - RGB image denoising
 - RGB video background modeling
-- multi-dimensional data analysis. 
 
 ### RGB Image Denoising
 
@@ -21,11 +20,7 @@ There are mainly three TRPCA applications leveraged in this repo:
 
 ### RGB Video Background Modeling
 
-![](./resources/background_modeling_example.png)
-
-### Multi-dimensional Data Analysis
-
-![](./resources/)
+![](./resources/background_modeling_example1.png)
 
 ## References
 

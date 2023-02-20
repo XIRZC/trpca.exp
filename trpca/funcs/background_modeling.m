@@ -39,7 +39,8 @@ for i=1:n4
     subplot(1,3,2);
     imshow(Lhat(:,:,:,i));
     subplot(1,3,3);
-    imshow(Shat(:,:,:,i));
+    Shat_background_gray=min(Shat(:,:,:,i)+0.3,1.0);
+    imshow(Shat_background_gray)
     set(gcf, 'Visible', 'off');
     vis_name = strcat(target_dir,replace(filename,video_type,strcat('_frame',strcat(num2str(i),'.jpg'))));
     saveas(gcf,vis_name);
