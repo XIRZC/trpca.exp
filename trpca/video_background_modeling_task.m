@@ -11,7 +11,7 @@ opts.tol = 1e-5;
 opts.rho = 1.1;
 opts.max_iter = 500;
 opts.DEBUG = 1;
-FRAME_SPAN = 15;
+FRAME_SPAN = 1;
 
 videos = dir(fullfile(SOURCE_DIR,strcat('*',VIDEO_TYPE)));
 videos_len = length(videos);

@@ -26,8 +26,6 @@ lambda = 1/sqrt(max(n1*n2,n3)*n4);
 disp("Optimizing by trpca_tnn algorithm...")
 tic
 [Lhat,Shat,~,~] = trpca_tnn(X,lambda,opts);
-% Lhat = X;
-% Shat = X;
 converged_time = toc
 
 % low-rank background L and moving foreground S visualization
