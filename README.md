@@ -8,6 +8,8 @@ This is a repository of simple TRPCA experiments including image denoising and v
 
 Open MATLAB and select the subfolder `./trpca` as root workspace, and run `./trpca/rgb_image_denoising_task.m`, `./trpca/video_background_modeling_task.m` for two applications, respectively.
 
+And then you would see the logs printed on MATLAB command pane, and know where the visualization results are saved to.
+
 ## Applications
 
 There are mainly two TRPCA applications leveraged in this repo:
