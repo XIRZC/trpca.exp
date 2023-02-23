@@ -4,6 +4,8 @@ This is a repository of simple TRPCA experiments including image denoising and v
 
 ![](./resources/banner.png)
 
+# DO NOT COPY FOR YOUR ASSIGNMENTS !!!
+
 ## Usage
 
 Open MATLAB and select the subfolder `./trpca` as root workspace, and run `./trpca/rgb_image_denoising_task.m`, `./trpca/video_background_modeling_task.m` for two applications, respectively.
@@ -37,5 +39,3 @@ There are mainly several related works about this repo:
 
 You can refer to Lu Canyi's [personal homepage](https://canyilu.github.io/), [github homepage](https://github.com/canyilu) and [google scholar homepage](https://scholar.google.com/citations?user=EZcKJi4AAAAJ&hl=en) to find more related and interesting works about various mathematics theorm applied to Computer Science.
 
-
-# DO NOT COPY FOR YOUR ASSIGNMENTS !!!
