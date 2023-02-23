@@ -36,3 +36,6 @@ There are mainly several related works about this repo:
 ## Miscellaneous
 
 You can refer to Lu Canyi's [personal homepage](https://canyilu.github.io/), [github homepage](https://github.com/canyilu) and [google scholar homepage](https://scholar.google.com/citations?user=EZcKJi4AAAAJ&hl=en) to find more related and interesting works about various mathematics theorm applied to Computer Science.
+
+
+# DO NOT COPY FOR YOUR ASSIGNMENTS !!!
